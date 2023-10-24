@@ -1,0 +1,24 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  username: postgres
+  password: Passw0rd=
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  database: walletguard_development
+  username: postgres
+  password: Passw0rd=
+
+test:
+  <<: *default
+  database: walletguard_test
+  username: postgres
+  password: Passw0rd=
+
+production:
+  <<: *default
+  database: walletguard_production
+  username: walletguard
+  password: <%= ENV["WALLETGUARD_DATABASE_PASSWORD"] %>
