@@ -67,3 +67,5 @@ group :test do
 end
 
 gem 'irb', '~> 1.8.2'
+
+gem 'devise', '~> 4.9'
