@@ -3,5 +3,6 @@ class Activity < ApplicationRecord
   validates :amount, presence: true, numericality: { greater_than_or_equal_to: 0 }
 
   belongs_to :author, class_name: 'User', foreign_key: 'author_id'
-  has_many :categories
+  has_many :category_activities
+  has_many :categories, through: :category_activities
 end
