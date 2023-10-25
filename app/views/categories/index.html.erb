@@ -1,1 +1,32 @@
-<h1>This is the index page</h1>
+<div>
+  <nav>
+  <%= link_to root_path do%>
+    Go Back
+  <% end %>
+    <h3>Your Categories</h3>
+    <%= link_to destroy_user_session_path, method: :delete do%>
+      Log out
+    <%end%>
+  </nav>
+  <div>
+    <%if @user.categories.empty? %>
+      <h2>There is no category</h2>
+    <% else %>
+      <% @user.categories.each_with_index do |category, index| %>
+        <%= link_to category_path(category.id) do %>
+          <div class="image-store">
+            <img src="<%= category.icon %> alt: "<%= category.name %> category-icon" >
+          </div>
+          <div>
+            <h4><%= category.name %></h4>
+            <p>Amount: $<%= @totals[index] %></p>
+            <span><%= category.created_at.strftime("%d %m %Y")%></span>
+          </div>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+  <%= link_to new_category_path do%>
+    Add New Category
+  <% end %>
+</div>

@@ -26,10 +26,10 @@ ActiveRecord::Schema[7.1].define(version: 2023_10_24_122854) do
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.string "icon"
-    t.bigint "user_id", null: false
+    t.bigint "author_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_categories_on_user_id"
+    t.index ["author_id"], name: "index_categories_on_author_id"
   end
 
   create_table "category_activities", force: :cascade do |t|
@@ -55,7 +55,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_10_24_122854) do
   end
 
   add_foreign_key "activities", "users", column: "author_id"
-  add_foreign_key "categories", "users"
+  add_foreign_key "categories", "users", column: "author_id"
   add_foreign_key "category_activities", "activities"
   add_foreign_key "category_activities", "categories"
 end
