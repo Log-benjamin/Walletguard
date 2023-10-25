@@ -1,0 +1,12 @@
+<div>
+  <nav class="navbar mobile-header">
+    <%= link_to categories_path  do%>
+        Go Back
+    <% end %>
+    <h3>New Transaction</h3>
+    <%= link_to destroy_user_session_path, method: :delete do%>
+        Log out
+    <%end%>
+  </nav>
+  <%= render 'form', activity: @activity %>
+</div>
