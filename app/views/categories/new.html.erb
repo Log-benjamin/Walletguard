@@ -1,35 +1,29 @@
-<nav>
-  <%= link_to categories_path do%>
-    Go Back
-  <% end %>
-  <h3>New Category</h3>
-  <%= link_to destroy_user_session_path, method: :delete do%>
-    Log out
-  <%end%>
-</nav>
+<%= render partial: "_partials/nav", locals: { title: "New Category", font_aws: "fa-circle-chevron-left fa-lg", back_path: categories_path} %>
 
-<%= form_with(model: @category) do |form| %>
-  <% if @category.errors.any? %>
+<div class = "new-cat-form-cont">
+  <%= form_with(model: @category) do |form| %>
+    <% if @category.errors.any? %>
+      <div>
+        <h2><%= pluralize(@category.errors.count, "error") %> prohibited this category from being saved:</h2>
+
+        <ul>
+          <% @category.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
     <div>
-      <h2><%= pluralize(@category.errors.count, "error") %> prohibited this category from being saved:</h2>
+      <%= form.text_field :name, autofocus: true, required: true, placeholder: "Category name", class: "category-icon-input" %>
+    </div>
 
-      <ul>
-        <% @category.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
+    <div>
+      <%= form.text_field :icon, required: true, placeholder: "Add icon URL", class: "category-icon-input" %>
+    </div>
+
+    <div>
+      <%= form.submit 'Save Category', class: "new-cat-save-btn" %>
     </div>
   <% end %>
-
-  <div>
-    <%= form.text_field :name, autofocus: true, required: true, placeholder: "Category name" %>
-  </div>
-
-  <div>
-    <%= form.text_field :icon, required: true, placeholder: "Add icon URL" %>
-  </div>
-
-  <div>
-    <%= form.submit 'Save Category' %>
-  </div>
-<% end %>
+</div>

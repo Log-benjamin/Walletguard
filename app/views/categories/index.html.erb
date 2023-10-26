@@ -1,32 +1,25 @@
-<div>
-  <nav>
-  <%= link_to root_path do%>
-    Go Back
-  <% end %>
-    <h3>Your Categories</h3>
-    <%= link_to destroy_user_session_path, method: :delete do%>
-      Log out
-    <%end%>
-  </nav>
-  <div>
-    <%if @user.categories.empty? %>
-      <h2>There is no category</h2>
-    <% else %>
-      <% @user.categories.each_with_index do |category, index| %>
-        <%= link_to category_path(category.id) do %>
-          <div class="image-store">
-            <img src="<%= category.icon %> alt: "<%= category.name %> category-icon" >
-          </div>
-          <div>
-            <h4><%= category.name %></h4>
-            <p>Amount: $<%= @totals[index] %></p>
-            <span><%= category.created_at.strftime("%d %m %Y")%></span>
-          </div>
-        <% end %>
-      <% end %>
+<%= render partial: "_partials/nav", locals: { title: "All Categories", font_aws: "fa-house", back_path: root_path} %>
+
+<%if @user.categories.empty? %>
+  <h2 class = "cat-empty">There is no category</h2>
+<% else %>
+  <% @user.categories.each_with_index do |category, index| %>
+    <%= link_to category_path(category.id), :class => "cate-card-link" do %>
+      <div class = "category-card-cont">
+        <div class="image-store">
+          <img src="<%= category.icon %> alt: "<%= category.name %> category-icon" >
+        </div>
+        <div class="cat-name-date-cont">
+          <h2 class = "cat-name-date"><%= category.name %></h2>
+          <h4 class = "cat-name-date"><%= category.created_at.strftime("%d %B %Y")%></h4>
+        </div>
+        <h2 class = "cat-total-price">$<%= @totals[index] %></h2>
+      </div>   
     <% end %>
-  </div>
-  <%= link_to new_category_path do%>
+  <% end %>
+<% end %>
+<div class="add-new-category-cont">
+  <%= link_to new_category_path, :class => "new-cat-save-btn" do%>
     Add New Category
   <% end %>
 </div>

@@ -1,0 +1,15 @@
+<div class = "cate-index-nav">
+  <nav>
+    <h2>
+      <%= link_to back_path do%>
+        <i class="fa-solid <%= font_aws %>" style="color: #fff;"></i>
+      <% end %>
+    </h2>
+    <h2 class = "h2-name"><%= title %></h2>
+    <h2>
+      <%= link_to destroy_user_session_path, method: :delete do%>
+        Log out
+      <%end%>
+    </h2>
+  </nav>
+</div>
