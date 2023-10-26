@@ -1,25 +1,26 @@
-<nav>
-  <%= link_to categories_path do%>
-    Go Back
-  <% end %>
-  <h3>Your Transactions</h3>
-  <%= link_to destroy_user_session_path, method: :delete do%>
-    <span>Log out</span>
-  <%end%>
-</nav>
-<h3><%= @category.name %></h3>
-<h3>$<%= @total %></h3>
+<%= render partial: "_partials/nav", locals: { title: "Your Transactions", font_aws: "fa-circle-chevron-left fa-lg", back_path: categories_path} %>
 
-<div>
-  <div>
-    <% @category.activities.reverse.each do |act| %>
+
+<div class = "cate-name-total">
+  <h3><%= @category.name %></h3>
+  <h3>$<%= @total %></h3>
+</div>
+
+
+<div class = "activi-top-cont">
+  <% @category.activities.reverse.each do |act| %>
+    <div class = "activity-card" >
       <div>
-        <p><%= act.name %> - <%= act.created_at.strftime("%d %m %Y") %></p>
+        <p><%= act.name %></p>
+        <p><%= act.created_at.strftime("%d %B %Y") %></p>
+      </div>
+      <div>
         <p>$<%= act.amount %></p>
       </div>
-    <% end %>
-  </div>
+    </div>
+  <% end %>
+  <%= link_to new_activity_path, class: "new-cat-save-btn" do%>
+    Add Transaction
+  <% end %>
 </div>
-<%= link_to new_activity_path do%>
-  Add Transaction
-<% end %>
+
