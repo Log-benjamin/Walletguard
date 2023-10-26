@@ -1,15 +1,282 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+body {
+  background-color: azure;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.home-link {
+  margin-left: 5%;
+  font-size: 1.3rem;
+}
+
+.img_container {
+  display: flex;
+  justify-content: center;
+}
+
+.h2-name {
+  color: black;
+  margin-left: 10%;
+}
+
+.logo_img_preview {
+  width: 30%;
+}
+
+.walletguard {
+  text-align: center;
+}
+
+.login-signup-container {
+  display: flex;
+  justify-content: center;
+}
+
+.login_link {
+  margin-right: 5%;
+}
+
+.login_link,
+.signup_link {
+  color: white;
+  background-color: rgb(20, 112, 192);
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.h2-name:hover {
+  color: white;
+}
+
+/* styling for devise */
+.sign_in_container {
+  display: flex;
+  margin-left: 20%;
+  flex-direction: column;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+}
+
+.label-name {
+  font-size: 0.9rem;
+}
+
+.input-fiel {
+  width: 80%;
+  height: 2.3rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.sbm-btn {
+  color: white;
+  background-color: rgb(20, 112, 192);
+  border: none;
+  margin-top: 0.8rem;
+  margin-bottom: 0.5rem;
+  padding: 0.6rem 1rem;
+  border-radius: 7px;
+}
+
+.login_link:hover,
+.signup_link:hover,
+.sbm-btn:hover {
+  color: black;
+  background-color: rgb(58, 186, 175);
+}
+
+/* styling for devise */
+
+/* categories styling */
+.cate-index-nav {
+  background-color: rgb(13, 140, 225);
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.cate-index-nav nav {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 10%;
+}
+
+nav h2 {
+  font-size: 1rem;
+  color: white;
+  margin-right: 15%;
+}
+
+nav h2 a {
+  color: white;
+  text-decoration: none;
+}
+
+.cat-empty {
+  text-align: center;
+}
+
+.category-card-cont {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 1%;
+  padding: 1rem 3%;
+  background-color: rgb(235, 235, 235);
+}
+
+.add-new-category-cont {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 4rem;
+}
+
+.add-new-category-cont a {
+  text-decoration: none;
+}
+
+.cate-card-link {
+  text-decoration: none;
+}
+
+.cat-total-price {
+  color: black;
+}
+
+.cat-name-date {
+  color: gray;
+}
+
+.image-store img {
+  width: 100px;
+  height: 100px;
+}
+
+.new-cat-form-cont {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.category-icon-input {
+  width: 50%;
+  margin: 1rem;
+  height: 1.75rem;
+}
+
+.new-cat-save-btn {
+  color: black;
+  background-color: rgb(48, 189, 107);
+  border: none;
+  font-size: 1rem;
+  border-radius: 5px;
+  padding: 0.75rem 1rem;
+  margin-top: 1rem;
+}
+
+.new-cat-save-btn:hover {
+  color: white;
+  cursor: pointer;
+  background-color: rgb(59, 176, 67);
+}
+
+.cate-name-total {
+  display: flex;
+  justify-content: center;
+}
+
+.cate-name-total h3 {
+  font-size: 1.5rem;
+  margin-right: 5%;
+  margin-left: 5%;
+}
+
+.activi-top-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-bottom: 4rem;
+}
+
+.activity-card {
+  width: 100%;
+  padding: 1rem 2rem;
+  display: flex;
+  margin-bottom: 2rem;
+  justify-content: space-between;
+  background-color: rgb(235, 235, 235);
+}
+
+.activity-card p {
+  font-size: 1.3rem;
+}
+
+.activi-top-cont a {
+  text-decoration: none;
+}
+
+.form-label {
+  font-size: 1.2rem;
+}
+
+.cat-selector {
+  height: 2rem;
+  width: 15%;
+  margin-left: 1rem;
+}
+
+nav h2:hover,
+nav h2 a:hover {
+  color: black;
+}
+
+/* categories styling */
+@media screen and (min-width: 768px) {
+  .logo_img_preview {
+    width: 20%;
+  }
+
+  .label-name {
+    font-size: 1.3rem;
+  }
+
+  .input-fiel {
+    width: 50%;
+  }
+
+  .signuplink-btn {
+    width: 25%;
+  }
+
+  /* categories styling */
+  nav h2 {
+    font-size: 1.5rem;
+  }
+
+  .cate-index-nav {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  .category-card-cont {
+    justify-content: left;
+    padding-right: 10%;
+    margin: 2rem 10%;
+  }
+
+  .image-store {
+    margin-right: 30%;
+  }
+
+  .cat-name-date-cont {
+    width: 100%;
+  }
+
+  .image-store img {
+    width: 150px;
+    height: 150px;
+  }
+
+  /* categories styling */
+}
