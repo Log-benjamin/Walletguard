@@ -19,6 +19,7 @@ test:
 
 production:
   <<: *default
+  url: <%= ENV['DATABASE_URL'] %>
   database: walletguard_production
   username: walletguard
   password: <%= ENV["WALLETGUARD_DATABASE_PASSWORD"] %>
