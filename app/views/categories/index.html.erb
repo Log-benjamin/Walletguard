@@ -1,0 +1,30 @@
+<%= render partial: "_partials/nav", locals: { title: "All Categories", font_aws: "fa-house", back_path: root_path} %>
+<div class = "cat-page-container">
+  <div class = "main-content-section">
+  <%if @user.categories.empty? %>
+    <h2 class = "cat-empty">There is no category</h2>
+  <% else %>
+    <% @user.categories.each_with_index do |category, index| %>
+      <%= link_to category_path(category.id), :class => "cate-card-link" do %>
+        <div class = "category-card-cont">
+          <div class="image-store">
+            <img src="<%= category.icon %> alt: "<%= category.name %> category-icon" >
+          </div>
+          <div class="cat-name-date-cont">
+            <h2 class = "cat-name-date"><%= category.name %></h2>
+            <h4 class = "cat-name-date"><%= category.created_at.strftime("%d %B %Y")%></h4>
+          </div>
+          <h2 class = "cat-total-price">$<%= @totals[index] %></h2>
+        </div>   
+      <% end %>
+    <% end %>
+  <% end %>
+  </div>
+  <div class="add-new-category-cont">
+  <%= link_to new_category_path, :class => "new-cat-save-btn" do%>
+    <div>
+        Add New Category
+    </div>
+    <% end %>
+  </div>
+</div>

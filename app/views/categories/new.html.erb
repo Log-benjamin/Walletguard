@@ -1,0 +1,29 @@
+<%= render partial: "_partials/nav", locals: { title: "New Category", font_aws: "fa-circle-chevron-left fa-lg", back_path: categories_path} %>
+
+<div class = "new-cat-form-cont">
+  <%= form_with(model: @category) do |form| %>
+    <% if @category.errors.any? %>
+      <div>
+        <h2><%= pluralize(@category.errors.count, "error") %> prohibited this category from being saved:</h2>
+
+        <ul>
+          <% @category.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div>
+      <%= form.text_field :name, autofocus: true, required: true, placeholder: "Category name", class: "category-icon-input" %>
+    </div>
+
+    <div>
+      <%= form.text_field :icon, required: true, placeholder: "Add icon URL", class: "category-icon-input" %>
+    </div>
+
+    <div class="save-new-category-cont">
+        <%= form.submit 'Save Category', class: "save-category-btn" %>
+    </div>
+  <% end %>
+</div>

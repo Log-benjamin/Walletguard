@@ -1,0 +1,8 @@
+<div class = "img_container">
+  <%= image_tag("app_icon.png", :alt => "logo-img", :class => "logo_img_preview") %>
+</div>
+<h1 class= "walletguard" >Walletguard</h1>
+<div class = "login-signup-container">
+  <%= link_to 'LOG IN', new_user_session_path,  :class => "login_link" %>
+  <%= link_to 'SIGN UP', new_user_registration_path, :class => "signup_link" %>
+</div>

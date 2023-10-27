@@ -1,0 +1,29 @@
+<%= render partial: "_partials/nav", locals: { title: "Your Transactions", font_aws: "fa-circle-chevron-left fa-lg", back_path: categories_path} %>
+
+
+<div class = "cate-name-total">
+  <h3><%= @category.name %></h3>
+  <h3>$<%= @total %></h3>
+</div>
+
+
+<div class = "activi-top-cont">
+  <% @category.activities.reverse.each do |act| %>
+    <div class = "activity-card" >
+      <div>
+        <p><%= act.name %></p>
+        <p><%= act.created_at.strftime("%d %B %Y") %></p>
+      </div>
+      <div>
+        <p>$<%= act.amount %></p>
+      </div>
+    </div>
+  <% end %>
+  <div class="add-new-category-cont">
+  <%= link_to new_activity_path, class: "new-cat-save-btn" do%>
+    <div>
+    Add Transaction
+    </div>
+  <% end %>
+  </div>
+</div>
