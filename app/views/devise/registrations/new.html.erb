@@ -8,29 +8,22 @@
       <%= render "devise/shared/error_messages", resource: resource %>
 
       <div class="field">
-        <%= f.label :name, class: "label-name" %><br />
-        <%= f.text_field :name, class: "input-fiel", autofocus: true, autocomplete: "name" %>
+        <%= f.text_field :name, class: "input-fiel", autofocus: true, placeholder: "Name", autocomplete: "name" %>
       </div>
       <div class="field">
-        <%= f.label :email, class: "label-name" %><br />
-        <%= f.email_field :email, class: "input-fiel", autofocus: true, autocomplete: "email" %>
+        <%= f.email_field :email, class: "input-fiel", autofocus: true, placeholder: "Email", autocomplete: "email" %>
       </div>
 
       <div class="field">
-        <%= f.label :password, class: "label-name" %>
-        <% if @minimum_password_length %>
-        <em>(<%= @minimum_password_length %> characters minimum)</em>
-        <% end %><br />
-        <%= f.password_field :password, class: "input-fiel", autocomplete: "new-password" %>
+        <%= f.password_field :password, class: "input-fiel", autocomplete: "new-password", placeholder: "Password (6 characters minimum)" %>
       </div>
 
       <div class="field">
-        <%= f.label :password_confirmation, class: "label-name" %><br />
-        <%= f.password_field :password_confirmation, class: "input-fiel", autocomplete: "new-password" %>
+        <%= f.password_field :password_confirmation, class: "input-fiel", autocomplete: "new-password", placeholder: "confirm password" %>
       </div>
 
       <div class="actions">
-        <%= f.submit "Sign up", class: "sbm-btn" %>
+        <%= f.submit "SIGN UP", class: "sbm-btn" %>
       </div>
     <% end %>
 

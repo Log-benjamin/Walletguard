@@ -6,13 +6,11 @@
 <div class="sign_in_container">
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="field">
-        <%= f.label :email, class: "label-name" %><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input-fiel" %>
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "Emial",class: "input-fiel" %>
       </div>
 
       <div class="field">
-        <%= f.label :password, class: "label-name" %><br />
-        <%= f.password_field :password, autocomplete: "current-password", class: "input-fiel" %>
+        <%= f.password_field :password, autocomplete: "current-password", placeholder: "Password",  class: "input-fiel" %>
       </div>
 
       <% if devise_mapping.rememberable? %>
@@ -23,7 +21,7 @@
       <% end %>
 
       <div class="actions">
-        <%= f.submit "Sign in", class: "sbm-btn" %>
+        <%= f.submit "LOG IN", class: "sbm-btn" %>
       </div>
     <% end %>
 
