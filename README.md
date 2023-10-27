@@ -83,10 +83,10 @@
 <div align="right"><hr width="250px"/></div>
 
 ## 🚀  Live Demo <a href="#live-demo"></a>
-- [Walletguard ](https://my-recipe-app-qigy.onrender.com/)
+- [Walletguard ](https://walletguard-eta2.onrender.com)
 
 ## 🎥 Video Presentation <a name="#video"></a>
-- [Video Presentation link]()
+- [Video Presentation link](https://drive.google.com/file/d/1NousWOF9_iYVyd4SxmNo8H3P432ZrY-i/view?usp=sharing)
 <p align="right">(<a href="#readme-top">back to top ☝️</a>)</p>
 
 ## 💻 Getting Started <a name="getting-started"></a>
